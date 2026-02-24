@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  --color-cream: #F4EBE1;
+  --color-cream-dark: #E6D8C8;
+  --color-brown: #4A3B32;
+  --color-brown-light: #8C7B70;
+  --color-brown-dark: #2C221C;
+  --color-white: #FFFFFF;
+  --color-accent: #C4A484;
+
+  /* Gala Page Custom Colors */
+  --color-primary: #d4af37;
+  --color-primary-dark: #b08d26;
+  --color-background-dark: #2a221c;
+  --color-surface-dark: #3d3228;
+  --color-surface-light: #fdfbf7;
+  --color-accent-cream: #f3e5d8;
+  --color-text-cream: #fdfbf7;
+  --color-text-gold: #d4af37;
+  --color-border-brown: #5a4636;
+
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-brown-dark);
+
+  /* Shadows from design */
+  --shadow-soft: 0 20px 40px -15px rgba(74, 59, 50, 0.1);
+  --shadow-card: 0 10px 30px -10px rgba(74, 59, 50, 0.08);
+
+  /* Custom letter spacing */
+  --tracking-widest: 0.15em;
+  --tracking-super-wide: 0.25em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased selection:bg-brown selection:text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
 }
