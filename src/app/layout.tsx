@@ -5,6 +5,7 @@ import Footer from "@/components/global/Footer";
 import SmoothScroll from "@/components/global/SmoothScroll";
 import Preloader from "@/components/global/Preloader";
 import CustomCursor from "@/components/global/CustomCursor";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -42,6 +43,9 @@ export default function RootLayout({
           <main className="flex-grow pt-16 md:pt-20 lg:pt-24">{children}</main>
           <Footer />
         </SmoothScroll>
+        {/* @ts-expect-error Custom element */}
+        <elevenlabs-convai agent-id="agent_1901kjandt5aeqtvm6zay3g084wd"></elevenlabs-convai>
+        <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" strategy="lazyOnload" />
       </body>
     </html>
   );

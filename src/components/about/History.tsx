@@ -34,13 +34,13 @@ export default function MissionHistory() {
                 </div>
 
                 {/* Imagery */}
-                <div className="lg:col-span-7 grid grid-cols-2 gap-6 relative">
+                <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 1 }}
-                        className="relative aspect-[3/4] mt-12 md:mt-24"
+                        className="relative aspect-[3/4] md:mt-24 h-[60vh] md:h-auto w-full md:w-auto overflow-hidden rounded-xl"
                     >
                         <Image
                             src="/images/okc-skyline.jpg"
@@ -54,7 +54,7 @@ export default function MissionHistory() {
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="relative aspect-[4/5] -mt-12 md:-mt-24 z-10"
+                        className="relative aspect-[4/5] -mt-12 md:-mt-24 z-10 w-4/5 md:w-auto h-[60vh] md:h-auto overflow-hidden rounded-xl md:rounded-none shadow-2xl md:shadow-none mx-auto md:mx-0"
                     >
                         <Image
                             src="/images/ac-hamlin-real.jpg"

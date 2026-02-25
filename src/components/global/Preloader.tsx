@@ -31,7 +31,7 @@ export default function Preloader() {
                             animate={{ y: '0%' }}
                             exit={{ y: '-100%', opacity: 0 }}
                             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                            className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream flex items-center gap-4 tracking-tight"
+                            className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-cream flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:gap-4 tracking-tight px-4 text-center"
                         >
                             <span>Oklahoma</span>
                             <span className="italic font-light text-brown-light">Legislative</span>
