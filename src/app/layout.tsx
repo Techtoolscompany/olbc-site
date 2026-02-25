@@ -45,7 +45,7 @@ export default function RootLayout({
         </SmoothScroll>
         {/* @ts-expect-error Custom element */}
         <elevenlabs-convai agent-id="agent_1901kjandt5aeqtvm6zay3g084wd"></elevenlabs-convai>
-        <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" strategy="lazyOnload" />
+        <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" strategy="afterInteractive" />
       </body>
     </html>
   );
